@@ -1,5 +1,6 @@
 require('normalize.css/normalize.css');
 require('styles/App.css');
+import { Link } from 'react-router'
 
 import React from 'react';
 
@@ -8,9 +9,12 @@ let yeomanImage = require('../images/yeoman.png');
 class AppComponent extends React.Component {
   render() {
     return (
-      <div className="index">
-        <img src={yeomanImage} alt="Yeoman Generator" />
-        <div className="notice">Please edit <code>src/components/Main.js</code> to get started!</div>
+        <div>
+        <h1>React Router Tutorial</h1>
+        <ul role="nav">
+          <li><Link to="/foo">Foo</Link></li>
+          <li><Link to="/bar">Bar</Link></li>
+        </ul>
       </div>
     );
   }
