@@ -11,11 +11,22 @@ import React, {
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Main from '../components/Main';
+import { Link } from 'react-router'
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
   render() {
     const {actions} = this.props;
-    return <Main actions={actions}/>;
+    //return <Main actions={actions}/>;
+
+    return (
+              <div>
+        <h1>React Router Tutorial</h1>
+        <ul role="nav">
+          <li><Link to="/foo">Foo</Link></li>
+          <li><Link to="/bar">Bar</Link></li>
+        </ul>
+        {this.props.children}
+      </div>)
   }
 }
 /* Populated by react-webpack-redux:reducer
