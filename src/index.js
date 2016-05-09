@@ -10,8 +10,14 @@ import { Router, Route, browserHistory } from 'react-router'
 
 const store = configureStore();
 
+const selector = state => {
+	console.log('selected');
+	return state.route.toJS();
+}
 // Create an enhanced history that syncs navigation events with the store
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(browserHistory, store,{
+  selectLocationState: selector
+} )
 
 render(
   <Provider store={store}>
