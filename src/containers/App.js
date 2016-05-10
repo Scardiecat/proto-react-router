@@ -12,6 +12,8 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Main from '../components/Main';
 import { Link } from 'react-router';
+import {Nav, NavItem} from 'react-bootstrap';
+import {LinkContainer} from 'react-router-bootstrap'
 var ImmutablePropTypes = require('react-immutable-proptypes');
 /* Populated by react-webpack-redux:reducer */
 class App extends Component {
@@ -21,10 +23,15 @@ class App extends Component {
     return (
       <div route={route}>
         <h1>React Router Tutorial</h1>
-        <ul role='nav'>
-          <li><Link to='/foo'>Foo</Link></li>
-          <li><Link to='/bar'>Bar</Link></li>
-        </ul>
+      
+      <Nav bsStyle="tabs">
+      <LinkContainer to="/foo">
+      <NavItem>Foo</NavItem>
+      </LinkContainer>
+      <LinkContainer to="/bar">
+        <NavItem>bar</NavItem>
+      </LinkContainer>
+    </Nav>
         {this.props.children}
       </div>
     );

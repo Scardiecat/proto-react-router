@@ -1,5 +1,6 @@
 require('normalize.css/normalize.css');
 require('styles/App.css');
+import { Button } from 'react-bootstrap';
 
 import React from 'react';
 
@@ -10,6 +11,7 @@ class FooComponent extends React.Component {
     return (
       <div className="foo">
         <div className="notice">Foo</div>
+        <Button/>
       </div>
     );
   }
